@@ -1,44 +1,29 @@
-let nunberOfFilms;
 
-const personalMovieDB = {
-    count: nunberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+let options = {
+    name: 'Alena',
+    age: 'very much',
+    education: 'school of hysterics',
 
-function start() {
-    nunberOfFilms = +prompt('Сколько фильмов вы посмотрели', '')
-    while (nunberOfFilms == '' || nunberOfFilms == null || isNaN(nunberOfFilms)) {
-        nunberOfFilms = +prompt('Сколько фильмов вы посмотрели', '')
-
-    }
-};
-start()
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('один из последних фиьльмов', '')
-        const b = prompt('На сколько оцените его', '');
-        if (a !== null && b != null && b != '' && a != '') {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error')
-            i--;
-        }
-    }
-    console.log(personalMovieDB)
-}
-rememberMyFilms()
-
-function isPrivat() {
-    if (personalMovieDB.privat) {
-        console.log('is privat')
-    } else {
-        console.log('is public')
-
+    disease: {
+        genrerals: 'Covid-19',
+        temperature: 36.8
+    },
+    makeTest: function () {
+        console.log('Test')
     }
 }
-isPrivat()
 
+
+options.makeTest();
+const { genrerals, temperature } = options.disease;
+console.log(genrerals)
+
+// for (const key in options) {
+//     if (typeof (options[key]) === 'object') {
+//         for (const i in options[key]) {
+//             console.log(i + ':' + options[key][i])
+//         }
+//     } else {
+//         console.log(key + ':' + options[key])
+//     }
+// }
